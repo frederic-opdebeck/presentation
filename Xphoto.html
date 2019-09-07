@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Forme-couleur-ombre-lumière</title>
+      	<link rel="stylesheet" type="text/css" href="style/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+   
+<div class="row">
+  <div class="column">
+      <p class="legendeC">Mikado
+<img id="myImg" src="image/XpV1_Micako.JPG" style="width:60%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" title="Lancer le diaporama">
+       </p>
+<!--      <figure>
+        <figcaption>Mikado</figcaption>
+        <img id="myImg" src="image/XpV1_Micako.JPG" style="width:60%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+      </figure> -->
+  </div>
+  <div class="column">
+      <p class="legendeC">Couleurs du Mercantour
+<img id="myImg" src="image/XpV2_Les_pierres_du_Mercantour.JPG" style="width:60%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" title="Lancer le diaporama">
+      </p></div>
+  <div class="column">
+      <p class="legendeC">Ombre&nuage
+<img id="myImg" src="image/XpV3_Nuage_et_ombre.JPG" style="width:60%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" title="Lancer le diaporama">
+      </p></div>
+  <div class="column">
+      <p class="legendeL"> Sauvage
+<img id="myImg" src="image/Xp1_Sauvage.JPG" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor" title="Lancer le diaporama">
+      </p></div>
+  <div class="column">
+      <p class="legendeL"> Un coeur gros comme ça !
+<img id="myImg" src="image/Xp2_Coeur.JPG" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor" title="Lancer le diaporama">
+      </p></div>
+  <div class="column">
+      <p class="legendeL"> Sodium
+<img id="myImg" src="image/Xp3_Sodium.JPG" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor" title="Lancer le diaporama">
+      </p></div> 
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img src="image/XpV1_Micako.JPG" style="width:31%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img src="image/XpV2_Les_pierres_du_Mercantour.JPG" style="width:31%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img src="image/XpV3_Nuage_et_ombre.JPG" style="width:31%">
+    </div>
+     <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img src="image/Xp1_Sauvage.JPG" style="width:70%">
+    </div>
+      <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+      <img src="image/Xp2_Coeur.JPG" style="width:70%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+      <img src="image/Xp3_Sodium.JPG" style="width:70%">
+    </div>
+      
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption" class="center"></p>
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="image/XpV1_Micako.JPG" style="width:30%" onclick="currentSlide(1)" alt="Mikado">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/XpV2_Les_pierres_du_Mercantour.JPG" style="width:30%" onclick="currentSlide(2)" alt="Les trois couleurs du Mercantour">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/XpV3_Nuage_et_ombre.JPG" style="width:30%" onclick="currentSlide(3)" alt="Ombre&nuage">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/Xp1_Sauvage.JPG" style="width:50%" onclick="currentSlide(4)" alt="Sauvage">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/Xp2_Coeur.JPG" style="width:50%" onclick="currentSlide(5)" alt="Un coeur gros comme ça !">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="image/Xp3_Sodium.JPG" style="width:50%" onclick="currentSlide(6)" alt="Sodium">
+    </div>
+</div>
+</div>       
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+        
+    <br><p class="legendeC">Deux diaporamas sur ce groupe facebook : 
+<a href="https://www.facebook.com/groups/248191185366281/" target="_blank">Tu es de Tours si...</a><br>
+<a href="https://www.facebook.com/photo.php?fbid=1835484896500158&set=pcb.942940349224691&type=3&theater&ifg=1" target="_blank" class="bleu">Coucher de soleil au pont Napoléon</a> - 
+<a href="https://www.facebook.com/photo.php?fbid=1876944552354192&set=pcb.959049434280449&type=3&theater&ifg=1" target="_blank" class="bleu">Balade automnale</a>
+        </p><br><br>
+</body>
+</html>
