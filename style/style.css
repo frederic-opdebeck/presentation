@@ -6,7 +6,7 @@ html {
 body {
   font-size: 1.4vw; /* 1.4vw */
   max-width: 1100px;
-  margin: auto;
+  margin: 20px 60px;
   background-color: #FFFFFF;
 }
 .flex {
